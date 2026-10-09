@@ -33,8 +33,8 @@ class TestBookshelfPage:
     def test_empty_state_visible(self, bookshelf_page):
         """空书架应显示空状态提示。"""
         page, _ = bookshelf_page
-        assert page._empty_state.isVisible()
-        assert not page._scroll_area.isVisible()
+        assert not page._empty_state.isHidden()
+        assert page._scroll_area.isHidden()
 
     def test_import_book_shows_card(self, bookshelf_page, txt_file):
         """导入书籍后应显示卡片，隐藏空状态。"""
@@ -42,8 +42,8 @@ class TestBookshelfPage:
         book_service.import_book(txt_file)
         page.refresh()
 
-        assert not page._empty_state.isVisible()
-        assert page._scroll_area.isVisible()
+        assert page._empty_state.isHidden()
+        assert not page._scroll_area.isHidden()
         assert page._grid_layout.count() == 1
 
     def test_import_multiple_books(self, bookshelf_page, txt_file, mini_epub):
@@ -81,7 +81,7 @@ class TestBookshelfPage:
         book_service.remove_book(book_id)
         page.refresh()
         assert page._grid_layout.count() == 0
-        assert page._empty_state.isVisible()
+        assert not page._empty_state.isHidden()
 
     def test_empty_state_component(self, temp_db, qtbot):
         """空状态组件基本测试。"""

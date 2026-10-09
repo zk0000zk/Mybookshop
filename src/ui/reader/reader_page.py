@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from PySide6.QtWidgets import (
-    QWidget, QVBoxLayout, QTextBrowser, QToolBar,
+    QWidget, QVBoxLayout, QHBoxLayout, QTextBrowser, QToolBar,
     QProgressBar, QLabel, QSplitter, QFrame
 )
 from PySide6.QtCore import Qt, QTimer, Signal
