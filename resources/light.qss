@@ -1,0 +1,222 @@
+/* 浅色主题 */
+QWidget {
+    background-color: #f5f5f5;
+    color: #333333;
+    font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+
+QMainWindow {
+    background-color: #f5f5f5;
+}
+
+/* 顶部工具栏 */
+QToolBar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 4px 8px;
+    spacing: 6px;
+}
+
+QToolBar QToolButton {
+    background-color: transparent;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333333;
+}
+
+QToolBar QToolButton:hover {
+    background-color: #e8e8e8;
+}
+
+QToolBar QToolButton:pressed {
+    background-color: #d0d0d0;
+}
+
+/* 普通按钮 */
+QPushButton {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-size: 14px;
+    color: #333333;
+}
+
+QPushButton:hover {
+    background-color: #e8e8e8;
+    border-color: #999999;
+}
+
+QPushButton:pressed {
+    background-color: #d0d0d0;
+}
+
+/* 主按钮（导入按钮） */
+QPushButton#primaryButton {
+    background-color: #1976D2;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+QPushButton#primaryButton:hover {
+    background-color: #1565C0;
+}
+
+QPushButton#primaryButton:pressed {
+    background-color: #0D47A1;
+}
+
+/* 输入框 */
+QLineEdit {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #333333;
+}
+
+QLineEdit:focus {
+    border-color: #1976D2;
+}
+
+/* 列表/树 */
+QListWidget, QTreeWidget {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333333;
+}
+
+QListWidget::item:hover, QTreeWidget::item:hover {
+    background-color: #f0f6ff;
+}
+
+QListWidget::item:selected, QTreeWidget::item:selected {
+    background-color: #1976D2;
+    color: #ffffff;
+}
+
+/* 滚动区域 */
+QScrollArea {
+    background-color: #ffffff;
+    border: none;
+}
+
+/* 书架网格区域 */
+QFrame#bookshelfContainer {
+    background-color: #f5f5f5;
+}
+
+/* 书籍卡片 */
+QFrame#bookCard {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+}
+
+QFrame#bookCard:hover {
+    border-color: #1976D2;
+}
+
+/* 阅读区域 */
+QTextBrowser {
+    background-color: #ffffff;
+    border: none;
+    color: #333333;
+    font-size: 16px;
+}
+
+/* 进度条 */
+QProgressBar {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 12px;
+    color: #666666;
+}
+
+QProgressBar::chunk {
+    background-color: #1976D2;
+    border-radius: 2px;
+}
+
+/* 标签 */
+QLabel {
+    color: #333333;
+    font-size: 14px;
+}
+
+QLabel#bookTitle {
+    font-size: 15px;
+    font-weight: bold;
+    color: #222222;
+}
+
+QLabel#bookMeta {
+    font-size: 12px;
+    color: #888888;
+}
+
+QLabel#emptyHint {
+    font-size: 16px;
+    color: #aaaaaa;
+}
+
+/* 滑块 */
+QSlider::groove:horizontal {
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+}
+
+QSlider::handle:horizontal {
+    background: #1976D2;
+    width: 16px;
+    height: 16px;
+    margin: -5px 0;
+    border-radius: 8px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #1976D2;
+    border-radius: 3px;
+}
+
+/* 菜单 */
+QMenu {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+QMenu::item {
+    padding: 6px 24px;
+    border-radius: 4px;
+}
+
+QMenu::item:selected {
+    background-color: #1976D2;
+    color: #ffffff;
+}
+
+/* 对话框 */
+QDialog {
+    background-color: #ffffff;
+}
+
+/* 分隔线 */
+QFrame#divider {
+    background-color: #e0e0e0;
+    max-height: 1px;
+    min-height: 1px;
+}
