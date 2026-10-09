@@ -1,12 +1,12 @@
 """书籍卡片组件。"""
 from PySide6.QtWidgets import (
-    QFrame, QVBoxLayout, QHBoxLayout, QLabel, QProgressBar, QMenu
+    QFrame, QVBoxLayout, QLabel, QProgressBar, QMenu
 )
 from PySide6.QtCore import Qt, Signal
-from PySide6.QtGui import QAction, QPixmap, QIcon
+from PySide6.QtGui import QAction, QPixmap
 
 from src.repository.book_repository import Book
-from src.utils.path_utils import format_file_size, format_datetime
+from src.utils.path_utils import format_datetime
 
 
 class BookCard(QFrame):
@@ -80,11 +80,10 @@ class BookCard(QFrame):
         self.setContextMenuPolicy(Qt.CustomContextMenu)
         self.customContextMenuRequested.connect(self._show_context_menu)
 
-        # 双击打开
-        self.mouseDoubleClickEvent = self._on_double_click
-
-    def _on_double_click(self, event):
+    def mouseDoubleClickEvent(self, event):
+        """双击打开书籍。"""
         self.open_requested.emit(self._book.id)
+        super().mouseDoubleClickEvent(event)
 
     def _show_context_menu(self, pos):
         menu = QMenu(self)

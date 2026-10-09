@@ -291,9 +291,10 @@ class ReaderPage(QWidget):
         # 重新渲染当前章节以应用新设置
         self._render_chapter(self._current_chapter)
 
-        # 通知主窗口切换全局主题
-        if hasattr(self.parent(), 'apply_theme'):
-            self.parent().apply_theme(theme)
+        # 通知主窗口切换全局主题（self.window() 返回顶层 MainWindow）
+        main_window = self.window()
+        if hasattr(main_window, 'apply_theme'):
+            main_window.apply_theme(theme)
 
     # ---------- 进度保存 ----------
     def _save_current_progress(self):
@@ -324,7 +325,6 @@ class ReaderPage(QWidget):
 
     def keyPressEvent(self, event):
         """键盘快捷键。"""
-        from PySide6.QtCore import QKeyCombination
         key = event.key()
         if key in (Qt.Key_Right, Qt.Key_PageDown):
             # 下一章

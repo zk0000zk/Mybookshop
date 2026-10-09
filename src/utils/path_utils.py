@@ -18,8 +18,8 @@ def get_db_path() -> str:
 
 def get_resource_path(relative_path: str) -> str:
     """获取资源文件绝对路径（resources/ 目录下）。"""
-    # 从 src/utils/path_utils.py 向上找到项目根目录
-    project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+    # 从 src/utils/path_utils.py 向上 3 层到项目根目录
+    project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     return os.path.join(project_root, relative_path)
 
 
